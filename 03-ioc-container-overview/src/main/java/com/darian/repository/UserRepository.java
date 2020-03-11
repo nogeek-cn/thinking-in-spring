@@ -7,6 +7,7 @@ import org.springframework.context.ApplicationContext;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 /***
  * 用户的信息仓库

@@ -21,6 +21,6 @@
         </property>
     </bean>
 
-    <bean id="userRepository2" class="com.darian.repository.UserRepository" autowire="byType">
+    <bean id="userRepository" class="com.darian.repository.UserRepository" autowire="byType">
     </bean>
 </beans>
