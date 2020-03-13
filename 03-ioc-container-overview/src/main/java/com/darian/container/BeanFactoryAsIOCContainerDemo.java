@@ -3,7 +3,6 @@ package com.darian.container;
 import com.darian.domain.User;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
-import org.springframework.context.annotation.Configuration;
 
 import java.util.Map;
 

@@ -6,18 +6,21 @@
         <artifactId>thinking-in-spring</artifactId>
         <groupId>com.darian</groupId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>03-ioc-container-overview</artifactId>
+    <artifactId>04-spring-bean</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>03-ioc-container-overview</artifactId>
+            <version>${version}</version>
+        </dependency>
     </dependencies>
-
-
 </project>
