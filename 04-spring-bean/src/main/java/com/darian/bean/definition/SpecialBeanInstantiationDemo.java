@@ -1,7 +1,9 @@
 package com.darian.bean.definition;
 
+import com.darian.bean.factory.DefaultUserFactory;
 import com.darian.bean.factory.UserFactory;
-import org.springframework.beans.factory.ListableBeanFactory;
+import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.Iterator;
@@ -16,13 +18,20 @@ import java.util.ServiceLoader;
  */
 public class SpecialBeanInstantiationDemo {
     public static void main(String[] args) {
-        ListableBeanFactory beanFactory = new ClassPathXmlApplicationContext(
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext(
                 "classpath:/META-INF/special-bean-instantiation-context.xml");
-        demoServiceLoader();
 
-        ServiceLoader<UserFactory> userFactoryServiceLoader = beanFactory.getBean(
-                "userFactoryServiceLoader", ServiceLoader.class);
+        // 通过 ApplicationContext 获取 AutowireCapableBeanFactory
+        AutowireCapableBeanFactory beanFactory = applicationContext.getAutowireCapableBeanFactory();
+
+        demoServiceLoader();
+        ServiceLoader<UserFactory> userFactoryServiceLoader = beanFactory.getBean("userFactoryServiceLoader", ServiceLoader.class);
         displayServiceLoader(userFactoryServiceLoader);
+
+        // 创建 UserFactory 通过 AutowireCapableBeanFactory
+        UserFactory userFactory = beanFactory.createBean(DefaultUserFactory.class);
+        System.out.println(userFactory.createUser());
+
 
     }
 

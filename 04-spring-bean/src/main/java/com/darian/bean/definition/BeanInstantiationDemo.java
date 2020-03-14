@@ -21,7 +21,5 @@ public class BeanInstantiationDemo {
 
         System.out.println(beanFactory.getBean("user-by-factory-bean", User.class));
 
-
-
     }
 }
