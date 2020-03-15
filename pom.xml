@@ -12,6 +12,7 @@
         <module>02-java-beans-demo</module>
         <module>03-ioc-container-overview</module>
         <module>04-spring-bean</module>
+        <module>05-dependency-lookup</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -59,10 +60,10 @@
     <!-- Spring 依赖 -->
     <dependencies>
         <!-- Spring IoC 核心依赖 -->
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework</groupId>-->
-        <!--            <artifactId>spring-context</artifactId>-->
-        <!--        </dependency>-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>javax.annotation</groupId>
