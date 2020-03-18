@@ -13,6 +13,7 @@
         <module>03-ioc-container-overview</module>
         <module>04-spring-bean</module>
         <module>05-dependency-lookup</module>
+        <module>06-dependency-injection</module>
     </modules>
 
     <packaging>pom</packaging>

@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans
-        xmlns="http://www.springframework.org/schema/beans"
-        xmlns:context="http://www.springframework.org/schema/context"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.springframework.org/schema/beans
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/context
-        https://www.springframework.org/schema/context/spring-context.xsd">
+">
 
     <bean id="user" class="com.darian.domain.User">
         <property name="id" value="1"></property>
         <property name="name" value="darian"></property>
+        <property name="city" value="BEI_JING"></property>
+        <property name="workCities" value="BEI_JING,SHANG_HAI"></property>
+        <property name="lifeCities">
+            <list>
+                <value>BEI_JING</value>
+                <value>HANG_ZHOU</value>
+            </list>
+        </property>
+        <property name="configFileLocation" value="classpath:/META-INF/user-config.properties"></property>
     </bean>
 
     <bean id="superUser" class="com.darian.domain.SuperUser" parent="user"
