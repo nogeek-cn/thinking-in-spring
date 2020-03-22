@@ -8,17 +8,14 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-    <bean id="user" class="com.darian.domain.User">
-        <property name="id" value="1"></property>
-        <property name="name" value="darian-lookup-2"></property>
+    <!-- 激活 Spring 注解驱动
+     -->
+    <context:annotation-config/>
+    <context:component-scan base-package="com.darian.beanscope"/>
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
+        <property name="prefix" value="/WEB-INF/"/>
+        <property name="suffix" value=".jsp"/>
     </bean>
 
-    <bean id="superUser" class="com.darian.domain.SuperUser" parent="user"
-          primary="true">
-        <property name="address" value="杭州-lookup-2"/>
-    </bean>
-
-    <bean id="objectFactory" class="org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean">
-        <property name="targetBeanName" value="user"/>
-    </bean>
 </beans>

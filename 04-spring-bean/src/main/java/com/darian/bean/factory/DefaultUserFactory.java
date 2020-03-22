@@ -1,8 +1,10 @@
 package com.darian.bean.factory;
 
 
+import com.darian.domain.User;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;

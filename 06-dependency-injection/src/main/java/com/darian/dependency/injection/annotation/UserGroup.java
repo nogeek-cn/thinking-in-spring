@@ -19,6 +19,6 @@ import java.lang.annotation.*;
 @Qualifier
 public @interface UserGroup {
 
-    @AliasFor(attribute = "value", annotation = Qualifier.class)
+    @AliasFor(value = "value", annotation = Qualifier.class)
     String value() default "";
 }

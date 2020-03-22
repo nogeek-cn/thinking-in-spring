@@ -1,9 +1,23 @@
 package com.darian.domain;
 
 import com.darian.enums.City;
+import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URI;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 /***
@@ -12,13 +26,17 @@ import java.util.List;
  * @author <a href="1934849492@qq.com">Darian</a> 
  * @date 2020/3/9  14:58
  */
-public class User {
+public class User implements BeanNameAware {
     private Long id;
     private String name;
     private City city;
     private City[] workCities;
     private List<City> lifeCities;
     private Resource configFileLocation;
+    /**
+     * 当前 Bean 的名称
+     */
+    private transient String beanName;
 
     public Long getId() {
         return id;
@@ -85,5 +103,21 @@ public class User {
         user.setId(23432L);
         user.setName("darian--User#createUser");
         return user;
+    }
+
+
+    @PostConstruct
+    public void init() {
+        System.out.println("用户对象[" + beanName + "]初始化.....");
+    }
+
+    @PreDestroy
+    public void destroy() {
+        System.out.println("用户对象[" + beanName + "]销毁.....");
+    }
+
+    @Override
+    public void setBeanName(String beanName) {
+        this.beanName = beanName;
     }
 }

@@ -1,5 +1,6 @@
 package com.darian.dependency.injection;
 
+import com.darian.dependency.injection.annotation.MyAutowired;
 import com.darian.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
@@ -7,6 +8,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
 
+import javax.inject.Inject;
+import java.lang.reflect.UndeclaredThrowableException;
 import java.util.Map;
 import java.util.Optional;
 
@@ -31,6 +34,14 @@ public class AnnotationDependencyInjectionResolutionDemo {
 
     @Autowired
     private Optional<User> userOptional;
+
+    @Inject
+    private User injecteduser;
+
+    @MyAutowired
+    private User userMyAutowired;
+
+
 
     public static void main(String[] args) {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
@@ -57,6 +68,7 @@ public class AnnotationDependencyInjectionResolutionDemo {
 
         System.out.println("demo.userLazy: " + demo.userLazy);
         System.out.println("-------------------------------------------------");
+        System.out.println("demo.userMyAutowired: " + demo.userMyAutowired);
 
         applicationContext.close();
     }

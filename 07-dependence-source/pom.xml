@@ -9,16 +9,15 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>06-dependency-injection</artifactId>
+    <artifactId>07-dependence-source</artifactId>
+
 
     <dependencies>
-
         <dependency>
             <groupId>${groupId}</groupId>
             <artifactId>03-ioc-container-overview</artifactId>
             <version>${version}</version>
         </dependency>
-
     </dependencies>
 
 </project>
