@@ -6,6 +6,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.context.request.RequestAttributes;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.RequestScope;
 
 /***
  * 首页 Spring Web MVC Controller
@@ -22,7 +25,7 @@ public class IndexController {
     @GetMapping("index.html")
     public String index(Model model) {
         model.addAttribute("user", user);
-        model.addAttribute("userIdentityHashCode" , System.identityHashCode(user));
+
         return "index";
     }
 }

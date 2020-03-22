@@ -13,7 +13,6 @@ index.html
 <hr/>
 \${user.name} : ${user.name}
 <hr/>
-\${userIdentityHashCode} : ${userIdentityHashCode}
 
 </body>
 </html>
