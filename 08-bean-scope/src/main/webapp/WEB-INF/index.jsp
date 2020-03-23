@@ -6,13 +6,40 @@
 <body>
 <h1>request</h1>
 index.html
+<br/>
+<br/>
 
+<hr/>
+搜索顺序：page -> request -> session -> servletContext
+<br/>
+
+<hr/>
+\${userRequest.id} : ${userRequest.id}
+<br/>
+\${userRequest.name} : ${userRequest.name}
+<hr/>
+<br/>
 <br/>
 <hr/>
-\${user.id} : ${user.id}
+\${userSession.id} : ${userSession.id}
+<br/>
+\${userSession.name} : ${userSession.name}
 <hr/>
-\${user.name} : ${user.name}
+<br/>
+<br/>
 <hr/>
+\${applicationScope['scopedTarget.userApplication'].id} : ${applicationScope['scopedTarget.userApplication'].id}
+<br/>
+\${applicationScope['scopedTarget.userApplication'].name} : ${applicationScope['scopedTarget.userApplication'].name}
+<hr/>
+<br/>
+<br/>
+<hr/>
+\${userApplicationModle.id} : ${userApplicationModle.id}
+<br/>
+\${userApplicationModle.name} : ${userApplicationModle.name}
+<hr/>
+
 
 </body>
 </html>

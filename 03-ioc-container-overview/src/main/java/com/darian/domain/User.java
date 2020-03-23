@@ -13,6 +13,7 @@ import javax.annotation.PreDestroy;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.Serializable;
 import java.net.URI;
 import java.net.URL;
 import java.util.ArrayList;
@@ -26,7 +27,7 @@ import java.util.List;
  * @author <a href="1934849492@qq.com">Darian</a> 
  * @date 2020/3/9  14:58
  */
-public class User implements BeanNameAware {
+public class User implements BeanNameAware, Serializable {
     private Long id;
     private String name;
     private City city;
