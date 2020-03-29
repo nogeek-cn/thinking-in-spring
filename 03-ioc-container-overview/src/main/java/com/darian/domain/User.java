@@ -114,7 +114,7 @@ public class User implements BeanNameAware, Serializable {
 
     @PreDestroy
     public void destroy() {
-        System.out.println("用户对象[" + beanName + "]销毁.....");
+        System.out.println("com.darian.domain.User#destroy() ... 用户对象[" + beanName + "]销毁.....");
     }
 
     @Override
