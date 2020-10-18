@@ -18,6 +18,16 @@
         <module>08-bean-scope</module>
         <module>09-bean-lifecycle</module>
         <module>10-configuration-metadata</module>
+        <module>11-resource</module>
+        <module>12-i18n</module>
+        <module>13-validation</module>
+        <module>14-data-binding</module>
+        <module>15-conversion</module>
+        <module>16-generic-resolution</module>
+        <module>17-event</module>
+        <module>18-annotation</module>
+        <module>19-environment-abstraction</module>
+        <module>20-applicationContext-lifecycle</module>
     </modules>
 
     <packaging>pom</packaging>
