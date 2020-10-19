@@ -22,7 +22,7 @@
         <module>12-i18n</module>
         <module>13-validation</module>
         <module>14-data-binding</module>
-        <module>15-conversion</module>
+        <module>15-type-conversion</module>
         <module>16-generic-resolution</module>
         <module>17-event</module>
         <module>18-annotation</module>
