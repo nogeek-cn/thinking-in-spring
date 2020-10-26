@@ -25,7 +25,7 @@ public class BeanConfigurationMetadataDemo {
                 .addPropertyValue("name", "darian")
                 .getBeanDefinition();
         // 声明 BeanDefinition 的来源
-        // 附加属性 (不影响 Bean 的生成 实例化、属性赋值、初始化 === populata、initialize)
+        // 附加属性 (不影响 Bean 的生成 实例化、属性赋值、初始化 === populate、initialize)
         beanDefinition.setAttribute("name", "darian-attribute");
         // 当前 BeanDefinition 来自何方
         beanDefinition.setSource(BeanConfigurationMetadataDemo.class);
@@ -46,6 +46,7 @@ public class BeanConfigurationMetadataDemo {
                 return bean;
             }
         });
+        // 注册 BeanDefinition
         beanFactory.registerBeanDefinition("user", beanDefinition);
 
         System.out.println(beanFactory.getBean("user"));
